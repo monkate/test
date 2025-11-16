@@ -15,14 +15,14 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 # Train model
 model = RandomForestClassifier()
-model.fit(X_train, y_test)
+model.fit(X_train, y_train)
 
 # Predict
 preds = model.predict(X_test)
 
 # Evaluate
 acc = accuracy_score(y_test, preds)
-f1 = f1_score(y_train, preds)
+f1 = f1_score(y_test, preds)
 
 print("Accuracy:", acc)
 print("F1:", f1)
